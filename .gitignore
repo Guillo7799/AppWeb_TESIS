@@ -34,3 +34,6 @@ yarn-error.log*
 .vercel
 
 .idea
+
+# Variables de entorno
+.env

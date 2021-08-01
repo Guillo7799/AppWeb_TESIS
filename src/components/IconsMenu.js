@@ -1,6 +1,3 @@
-/**
- * Created by chalosalvador on 9/2/21
- */
 import React from "react";
 import IconButton from "@material-ui/core/IconButton";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -69,8 +66,8 @@ const IconsMenu = () => {
       open={isMenuOpen}
       onClose={handleMenuAccountClose}
     >
-      <MenuItem onClick={handleMenuAccountClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuAccountClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuAccountClose}>Perfil</MenuItem>
+      <MenuItem onClick={handleMenuAccountClose}>Mi cuenta</MenuItem>
       <MenuItem onClick={handleLogout}>Cerrar sesión</MenuItem>
     </Menu>
   );
