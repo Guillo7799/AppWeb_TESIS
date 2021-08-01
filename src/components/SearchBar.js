@@ -1,6 +1,3 @@
-/**
- * Created by chalosalvador on 9/2/21
- */
 import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";

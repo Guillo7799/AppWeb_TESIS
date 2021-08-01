@@ -7,6 +7,11 @@ import * as yup from "yup";
 import styles from "@/styles/Login.module.css";
 import { Button, Grid, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import Image from "next/image";
+import Typography from "@material-ui/core/Typography";
+import Routes from "../constants/routes";
+import Link from "next/link";
+import { Link as MuiLink } from "@material-ui/core";
 
 const schema = yup.object().shape({
   email: yup
@@ -21,6 +26,12 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   buttonWrapper: {
+    textAlign: "center",
+  },
+  icon: {
+    textAlign: "center",
+  },
+  description: {
     textAlign: "center",
   },
 }));
@@ -60,34 +71,26 @@ const Login = () => {
       setLoading(false);
     }
   };
-
-  // const handleViewArticle = async () => {
-  //   try {
-  //     const articleData = await Article.getById("1");
-  //
-  //     console.log("articleData", articleData);
-  //   } catch (error) {
-  //     if (error.response) {
-  //       // The request was made and the server responded with a status code
-  //       // that falls out of the range of 2xx
-  //       console.log(error.response);
-  //     } else if (error.request) {
-  //       // The request was made but no response was received
-  //       // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-  //       // http.ClientRequest in node.js
-  //       console.log(error.request);
-  //     } else {
-  //       // Something happened in setting up the request that triggered an Error
-  //       console.log("Error", error.message);
-  //     }
-  //     console.log(error.config);
-  //   }
-  // };
-
   return (
     <div className={styles.login}>
       <Grid container justify="center">
-        <Grid item xs={6}>
+        <Grid item xs={12} className={classes.icon}>
+          <Image
+            src="/login/key.png"
+            alt="icono_login"
+            width={100}
+            height={110}
+          />
+        </Grid>
+        <br />
+        <Grid item xs={12} className={classes.description}>
+          <Typography component="h1" variant="h5">
+            Iniciar sesión
+          </Typography>
+        </Grid>
+        <br />
+        <br />
+        <Grid item xs={6} style={{ maxWidth: "450px" }}>
           <form noValidate autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
             <Grid container spacing={2} justify="center" alignItems="center">
               <Grid xs={12} item>
@@ -107,7 +110,7 @@ const Login = () => {
                   id="password"
                   name="password"
                   type="password"
-                  label="Clave"
+                  label="Contraseña"
                   inputRef={register}
                   autoComplete="current-password"
                   error={!!errors.password}
@@ -124,6 +127,18 @@ const Login = () => {
                 >
                   Iniciar sesión
                 </Button>
+              </Grid>
+              <Grid container>
+                <Grid item xs>
+                  <Link href={Routes.REMEMBERPASSWORD} variant="body2">
+                    Olvidé la contraseña
+                  </Link>
+                </Grid>
+                <Grid item xs>
+                  <Link href={Routes.GENERAL} variant="body2" passHref>
+                    <MuiLink>{"¿No tienes cuenta?, Registrarme"}</MuiLink>
+                  </Link>
+                </Grid>
               </Grid>
             </Grid>
           </form>

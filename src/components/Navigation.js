@@ -1,6 +1,3 @@
-/**
- * Created by chalosalvador on 5/2/21
- */
 import { useState } from "react";
 import Image from "next/image";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -12,6 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import HomeIcon from "@material-ui/icons/Home";
 import {
   Box,
   Divider,
@@ -35,16 +33,16 @@ const mainMenuItems = [
     to: Routes.HOME,
   },
   {
-    text: "Inicio",
+    text: <HomeIcon />,
     to: Routes.HOME,
   },
   {
     text: "Sobre la Ley",
-    to: Routes.ABOUT,
+    to: Routes.LEYES,
   },
   {
     text: "Políticas",
-    to: Routes.ABOUT,
+    to: Routes.POLITICS,
   },
 ];
 const useStyles = makeStyles((theme) => ({
@@ -199,7 +197,7 @@ export default function MainMenu(props) {
                   <Image
                     src="/logo-gales.png"
                     alt="Gales"
-                    width={136}
+                    width={156}
                     height={65}
                   />
                 </MuiLink>

@@ -9,6 +9,10 @@ const publicRoutes = {
   // USERS: "/usuarios",
   // USERS_ID: `/usuario/:id`,
   ABOUT: "/about",
+  REMEMBERPASSWORD: "/olvide-mi-clave",
+  GENERAL: "/registro-general",
+  POLITICS: "/politicas-de-uso-privacidad",
+  LEYES: "/ley-ecuatoriana",
 };
 
 const privateRoutes = {

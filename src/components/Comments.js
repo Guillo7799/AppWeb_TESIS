@@ -1,6 +1,3 @@
-/**
- * Created by chalosalvador on 10/2/21
- */
 import React from "react";
 import useSWR from "swr";
 import { fetcher } from "@/lib/utils";
